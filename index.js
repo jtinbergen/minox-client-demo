@@ -93,7 +93,6 @@ const getAdministrations = async (token, tenantId) => {
 }
 
 app.get('/', async (request, response) => {
-  console.log(request);
   let html = '<!DOCTYPE html><html><head><title>Minox client demo</title></head><body><h1>Welkom bij Minox client demo</h1>';
   if (request.user && request.user.token) {
     html += '<a href="/dashboard">Dashboard tonen</a>';
