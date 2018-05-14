@@ -5,6 +5,7 @@ const superagent = require('superagent');
 const session = require('express-session');
 const OAuth2Strategy = require('passport-oauth2').Strategy;
 const ngrok = require('ngrok');
+const opn = require('opn');
 
 // ************************************************************
 // ************************************************************
@@ -18,7 +19,6 @@ let CLIENTDOMAIN = '';
 const CLIENTID = '';
 const CLIENTSECRET = '';
 const REQUESTEDSCOPES = 'administration:read supplier:read customer:read ledger_account:read journal:read vat:read transaction:read transaction:write';
-const opn = require('opn');
 
 process.on('unhandledRejection', (error) => {
   console.error(error);
