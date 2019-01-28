@@ -52,8 +52,11 @@ const getProfile = async accessToken => {
   let profile = null;
   try {
     const reply = await superagent
-      .get(`${MINOXDOMAIN}/api/1/inspect/${accessToken}`)
-      .auth(CLIENTID, CLIENTSECRET);
+      .post(`${MINOXDOMAIN}/api/1/inspect`)
+      .auth(CLIENTID, CLIENTSECRET)
+      .send({
+        token: accessToken
+      });
     profile = reply.body;
   } catch (e) {
     console.error(e);
